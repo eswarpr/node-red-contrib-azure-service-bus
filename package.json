@@ -1,0 +1,33 @@
+{
+  "name": "node-red-contrib-azure-service-bus",
+  "version": "1.0.0",
+  "description": "A node red node for sending and receives messages from Azure Service Bus topics and queues",
+  "keywords": [
+    "node-red",
+    "azure",
+    "service bus",
+    "queue",
+    "topic"
+  ],
+  "node-red": {
+    "nodes": {
+      "receive-topic-message": "receive-topic-message.js",
+      "send-topic-message": "send-topic-message.js",
+      "receive-queue-message": "receive-queue-message.js",
+      "send-queue-message": "send-queue-message.js"
+    }
+  },
+  "author": "Eswar Prakash",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eswarpr/node-red-contrib-azure-service-bus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eswarpr/node-red-contrib-azure-service-bus/issues"
+  },
+  "homepage": "https://github.com/eswarpr/node-red-contrib-azure-service-bus#readme",
+  "dependencies": {
+    "@azure/service-bus": "^7.7.3"
+  }
+}
