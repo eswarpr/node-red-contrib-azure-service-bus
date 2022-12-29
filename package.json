@@ -14,11 +14,7 @@
   "node-red": {
     "version": ">=3.0.0",
     "nodes": {
-      "azure-service-bus": "service-bus.js",
-      "receive-topic-message": "receive-topic-message.js",
-      "send-topic-message": "send-topic-message.js",
-      "receive-queue-message": "receive-queue-message.js",
-      "send-queue-message": "send-queue-message.js"
+      "service-bus": "service-bus.js"
     }
   },
   "author": "Eswar Prakash",
