@@ -12,7 +12,7 @@
     "type": "comment",
     "z": "eb75698b395883fd",
     "name": "Ensure you have a valid service bus service deployed to your Azure",
-    "info": "Your service bus will need to have a topic and a subscription created",
+    "info": "Your service bus will need to have a topic, a queue and a subscription created. Create a shared access key for the topic subscription and the queue,\nand note them down.\n\nYou will need the name of the shared access keys, the topic name, the queue name and the subscription name to test this example",
     "x": 300,
     "y": 40,
     "wires": []
@@ -26,7 +26,7 @@
     "subscription": "",
     "connectionString": "",
     "x": 160,
-    "y": 120,
+    "y": 180,
     "wires": [
       [
         "ca0a9c99ea45c17c"
@@ -47,7 +47,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 550,
-    "y": 120,
+    "y": 280,
     "wires": []
   },
   {
@@ -72,8 +72,8 @@
     "topic": "",
     "payload": "{\"messageContent\":\"Some message content\"}",
     "payloadType": "json",
-    "x": 110,
-    "y": 200,
+    "x": 130,
+    "y": 100,
     "wires": [
       [
         "8067e19b5c06e5eb"
@@ -88,8 +88,64 @@
     "topic": "",
     "subscription": "",
     "connectionString": "",
-    "x": 360,
-    "y": 200,
+    "x": 380,
+    "y": 100,
     "wires": []
+  },
+  {
+    "id": "7c47f91563f278d3",
+    "type": "Azure Service Bus - Receive Queue Message",
+    "z": "eb75698b395883fd",
+    "name": "",
+    "queue": "",
+    "connectionString": "",
+    "x": 160,
+    "y": 380,
+    "wires": [
+      [
+        "ca0a9c99ea45c17c"
+      ]
+    ]
+  },
+  {
+    "id": "41694dbc4482ab5a",
+    "type": "Azure Service Bus - Send Queue Message",
+    "z": "eb75698b395883fd",
+    "name": "",
+    "queue": "",
+    "connectionString": "",
+    "x": 400,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "367cc75f660afcbe",
+    "type": "inject",
+    "z": "eb75698b395883fd",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "message",
+        "v": "{\"contentType\":\"application/json\",\"properties\":{\"sender\":\"Joe Blogs\",\"senderEmail\":\"joe@blogs.com\"}}",
+        "vt": "json"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"messageContent\":\"Some message content\"}",
+    "payloadType": "json",
+    "x": 130,
+    "y": 520,
+    "wires": [
+      [
+        "41694dbc4482ab5a"
+      ]
+    ]
   }
 ]
