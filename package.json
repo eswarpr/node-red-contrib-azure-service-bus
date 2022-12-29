@@ -9,6 +9,7 @@
     "topic"
   ],
   "node-red": {
+    "version": ">=3.0.8",
     "nodes": {
       "receive-topic-message": "receive-topic-message.js",
       "send-topic-message": "send-topic-message.js"
