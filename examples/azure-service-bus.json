@@ -1,0 +1,95 @@
+[
+  {
+    "id": "eb75698b395883fd",
+    "type": "tab",
+    "label": "Azure Service Bus",
+    "disabled": false,
+    "info": "Demonstrates how to use the Azure Service Bus nodes",
+    "env": []
+  },
+  {
+    "id": "13b28e478eafd142",
+    "type": "comment",
+    "z": "eb75698b395883fd",
+    "name": "Ensure you have a valid service bus service deployed to your Azure",
+    "info": "Your service bus will need to have a topic and a subscription created",
+    "x": 300,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "25637d055ce4e35a",
+    "type": "Azure Service Bus - Receive Topic Message",
+    "z": "eb75698b395883fd",
+    "name": "",
+    "topic": "",
+    "subscription": "",
+    "connectionString": "",
+    "x": 160,
+    "y": 120,
+    "wires": [
+      [
+        "ca0a9c99ea45c17c"
+      ]
+    ]
+  },
+  {
+    "id": "ca0a9c99ea45c17c",
+    "type": "debug",
+    "z": "eb75698b395883fd",
+    "name": "output the contents of the received message",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 550,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "f7e3cab57c847e14",
+    "type": "inject",
+    "z": "eb75698b395883fd",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "message",
+        "v": "{\"contentType\":\"application/json\",\"properties\":{\"sender\":\"Joe Blogs\",\"senderEmail\":\"joe@blogs.com\"}}",
+        "vt": "json"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "{\"messageContent\":\"Some message content\"}",
+    "payloadType": "json",
+    "x": 110,
+    "y": 200,
+    "wires": [
+      [
+        "8067e19b5c06e5eb"
+      ]
+    ]
+  },
+  {
+    "id": "8067e19b5c06e5eb",
+    "type": "Azure Service Bus - Send Topic Message",
+    "z": "eb75698b395883fd",
+    "name": "",
+    "topic": "",
+    "subscription": "",
+    "connectionString": "",
+    "x": 360,
+    "y": 200,
+    "wires": []
+  }
+]
