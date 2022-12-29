@@ -19,7 +19,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:eswarpr/node-red-contrib-azure-service-bus.git"
+    "url": "git://github.com/eswarpr/node-red-contrib-azure-service-bus.git"
   },
   "bugs": {
     "url": "https://github.com/eswarpr/node-red-contrib-azure-service-bus/issues"
