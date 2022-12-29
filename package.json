@@ -1,6 +1,6 @@
 {
   "name": "@eswarpr/node-red-azure-service-bus",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A set of Node-RED nodes for sending and receiving messages from Azure Service Bus topics",
   "keywords": [
     "node-red",
@@ -8,8 +8,11 @@
     "service bus",
     "topic"
   ],
+  "engines": {
+    "node": ">=16.16.0 <=18.12.0"
+  },
   "node-red": {
-    "version": ">=3.0.8",
+    "version": ">=3.0.0",
     "nodes": {
       "receive-topic-message": "receive-topic-message.js",
       "send-topic-message": "send-topic-message.js"
