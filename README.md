@@ -19,7 +19,7 @@ before using this node.
 
 ## Azure Service Bus - Receive Topic Message
 Generates a ``msg.payload`` set to the body of the message received
-from service bus.
+from service bus topic to a subscription.
 
 ### Outputs
 - ``msg.topic`` - _string_ - the service bus topic that was the source of the message
@@ -32,8 +32,35 @@ The ``msg.message`` will be set to an object containing the following additional
 - ``subject`` - _string_ - the subject of the message as specified at the source.
 - ``properties`` - _object_ - additional message metadata specified at the source.
 
+## Azure Service Bus - Receive Queue Message
+Generates a ``msg.payload`` set to the body of the message received
+from a service bus queue.
+
+### Outputs
+- ``msg.topic`` - _string_ - the service bus queue that was the source of the message
+- ``msg.payload`` - _any_ - the contents of the message that was received from service bus
+- ``msg.message`` - _object (see below)_ - additional information about the message
+
+The ``msg.message`` will be set to an object containing the following additional data:
+- ``contentType`` - _string_ - the MIME type of the received message, as specified at the source.
+- ``id`` - _string_ - the unique ID of the message as specified at the source.
+- ``subject`` - _string_ - the subject of the message as specified at the source.
+- ``properties`` - _object_ - additional message metadata specified at the source.
+
 ## Azure Service Bus - Send Topic Message
 Generates and sends a service bus message to the topic specified in the configuration of the node.
+
+### Input
+- ``msg.payload`` - _any_ - the message to send
+- ``msg.message`` - _object (see below)_ - additional information about the message
+
+The ``msg.message`` property can be setup with the following additional information, which will
+passed without changes to service bus as a part of the sent message:
+- ``contentType`` - _string_ - the MIME type of the message contents
+- ``properties`` - _object_ - additional metadata for the message
+
+## Azure Service Bus - Send Queue Message
+Generates and sends a service bus message to the queue specified in the configuration of the node.
 
 ### Input
 - ``msg.payload`` - _any_ - the message to send

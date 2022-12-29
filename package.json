@@ -1,6 +1,6 @@
 {
   "name": "@eswarpr/node-red-azure-service-bus",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "A set of Node-RED nodes for sending and receiving messages from Azure Service Bus topics and queues",
   "keywords": [
     "node-red",

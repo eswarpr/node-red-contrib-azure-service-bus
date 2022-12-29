@@ -41,7 +41,7 @@ module.exports = function (RED) {
             node.log(`Messages received. Body: ${JSON.stringify(message.body)} Content-Type: ${message.contentType}`);
             node.send({
                 payload: message.body,
-                topic: node.topic,
+                topic: node.queue,
                 message: {
                     contentType: message.contentType,
                     id: message.messageId,
