@@ -1,4 +1,4 @@
-# @eswarpr/node-red-contrib-azure-service-bus
+# @eswarpr/node-red-azure-service-bus
 
 A set of [Node-RED](https://nodered.org) nodes to send and receive [Azure Service Bus](https://azure.microsoft.com/en-gb/products/service-bus/)
 messages. You will need access to a valid [Microsoft Azure](https://azure.microsoft.com/en-gb/) subscription and Azure Service Bus
@@ -10,7 +10,7 @@ Either use the Node-RED Menu -> Manage Palette option to install, or run the fol
 typically ``~/.node-red``
 
 ``
-npm i @eswarpr/node-red-contrib-azure-service-bus
+npm i @eswarpr/node-red-azure-service-bus
 ``
 
 # Usage
@@ -70,4 +70,3 @@ The ``msg.message`` property can be setup with the following additional informat
 passed without changes to service bus as a part of the sent message:
 - ``contentType`` - _string_ - the MIME type of the message contents
 - ``properties`` - _object_ - additional metadata for the message
-- 
